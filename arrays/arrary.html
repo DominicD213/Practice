@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="width:50%">
+    <h1>Shopping list</h1>
+        <legend>List </legend>
+        <p id="storage"></p>
+    <fieldset>
+        <p>What would you like to add to your list.</p>
+        <input type="text" id="box">
+    </fieldset>
+    <fieldset>
+        <button type="submit" id="addbtn">Add To List</button>
+    </fieldset>
+    <fieldset>
+        <button type="submit" id="shiftbtn">Delete First Item</button>
+    </fieldset>
+    <fieldset>
+        <button type="submit" id="popbtn">Delete Last Item</button>
+    </fieldset>
+</div>
+    <script>const list = [];
+        document.getElementById("addbtn").addEventListener("click", addtolist);
+        function addtolist(){
+            boxvalue = document.getElementById('box').value;
+            list.push(boxvalue);
+            console.log(list);
+            document.getElementById('storage').innerHTML = list.join('<br>');
+        }
+        document.getElementById("shiftbtn").addEventListener("click", delfirst);
+        function delfirst(){
+            list.shift();
+            document.getElementById('storage').innerHTML = list.join('<br>');
+        }
+        document.getElementById("popbtn").addEventListener("click", dellast);
+        function dellast(){
+            list.pop();
+            document.getElementById('storage').innerHTML = list.join('<br>');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cent Checker</title>
+</head>
+<body>
+    <style>
+        *{
+            align-items: center;
+            text-align: center;
+        }
+    </style>
+    <h2>Change Calculator</h2>
+        <form onsubmit='return false;'>
+            <label>Enter No. of Cents (0-99)</label> :
+            <input type='text' name='cents' id='cents'>
+            <button onclick="change()">Calculate</button><br><br>
+            <label>Quarters :</label> 
+            <input type='text' name='quarters' id='quarters'><br>
+            <label>Dimes :</label>
+            <input type='text' name='dimes' id='dimes'><br>
+            <label>Nickels :</label>
+            <input type='text' name='nickels' id='nickels'><br>
+            <label>Pennies :</label>
+            <input type='text' name='pennys' id='pennys'>
+    </form>
+</body>
+<script>
+function change () {   
+    var centVar = document.getElementById("cents").value;
+    var calVar = 0;
+    if(Number(centVar)>0 && Number(centVar)<100){
+            calVar = parseInt(centVar/25);
+            document.getElementById("quarters").value = calVar;
+            centVar = centVar -(25 * calVar);
+            calVar = parseInt(centVar/10);
+            document.getElementById("dimes").value = calVar;
+            centVar = centVar - (10 * calVar);
+            calVar = parseInt(centVar/5);
+            document.getElementById("nickels").value = calVar;
+            centVar = centVar -(5*calVar);
+            calVar = parseInt(centVar);
+            document.getElementById("pennys").value = calVar;
+            centVar = centVal -(calVar);
+        }
+        else{
+    alert("Please Enter Cents Between 0 - 99");
+            }
+    }
+</script>
+</body>
+</html>

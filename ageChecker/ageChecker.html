@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<p>Based on your age you will now be redirected to a website suitable for you</p>
+<button id = "redirect">Click Me</button>
+    <script>
+        var theAge = parseInt(prompt("Enter your age"));
+         if (theAge >21){
+            document.getElementById("redirect").addEventListener("click", myRedirect);
+            function myRedirect() {
+                location.href ="http://www.espn.com/"
+             }
+         }
+         else{
+            document.getElementById("redirect").addEventListener("click", myRedirect);
+            function myRedirect() {
+                location.href ="http://www.disney.com/"
+             }
+         }
+    </script>
+</body>
+</html>
